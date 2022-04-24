@@ -1,0 +1,532 @@
+{
+  "report": {
+    "@source": "ReportDetails",
+    "StudentList": {
+      "@Name": "Arial",
+      "@Size": "9",
+      "@ReportHeader": "Class List Report ",
+      "List": [
+        {
+          "@ListHeader": "Class List Report  : L6C/CsG as of 26/01/2022",
+          "@GenderCount": "Males: 6 Females : 3",
+          "TableHeader": {
+            "ColName": [
+              {
+                "@Width": "175",
+                "#text": "Full Name"
+              },
+              {
+                "@Width": "75",
+                "#text": "Year Group"
+              },
+              {
+                "@Width": "75",
+                "#text": "Reg Group"
+              },
+              {
+                "@Width": "115",
+                "#text": "Admission Number"
+              },
+              {
+                "@Width": "175",
+                "#text": "House"
+              }
+            ]
+          },
+          "StudentData": {
+            "DataRow": [
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Black, Vici"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-DJG"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "002227"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Northwold Yales"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Chambers, Finbar"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-EWD"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "004990"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Chiang, Sophie"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-FKD"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "004991"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Pendeen Dragons"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Lumsden, Finlay"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-EMB"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005519"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Gonville Griffins"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Ma, Yee Yee"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-DJG"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "006345"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Manini, Mario"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-MJW"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005018"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Mecklenburgh Unicorns"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Smith, William"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-MSE"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "002217"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Wang, RuoyuFei"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-MSE"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005538"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Yun, Yechan"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-MSE"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005677"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "@ListHeader": "Class List Report  : L6D/CsG as of 26/01/2022",
+          "@GenderCount": "Males: 9 Females : 1",
+          "TableHeader": {
+            "ColName": [
+              {
+                "@Width": "175",
+                "#text": "Full Name"
+              },
+              {
+                "@Width": "75",
+                "#text": "Year Group"
+              },
+              {
+                "@Width": "75",
+                "#text": "Reg Group"
+              },
+              {
+                "@Width": "115",
+                "#text": "Admission Number"
+              },
+              {
+                "@Width": "175",
+                "#text": "House"
+              }
+            ]
+          },
+          "StudentData": {
+            "DataRow": [
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Bennett, Jem"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-PXR"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "001537"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Gonville Griffins"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Benton, Hugh"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-RAM"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "002019"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Northwold Yales"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Chen, Daniel"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-EWD"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005496"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Earle, Robert"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-DVP"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005500"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Bateman Bulls"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Lazar, Zakk"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-DVP"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "005516"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Bateman Bulls"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Munteanu, Elvira"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-MSE"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "006349"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Langdale Lions"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Rouse, Sebastian"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-CKB"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "001598"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Mecklenburgh Unicorns"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Taipale, Ville"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-SPB"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "006365"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Pendeen Dragons"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Williams, Rufus"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-EMB"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "004521"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Gonville Griffins"
+                  }
+                ]
+              },
+              {
+                "CellData": [
+                  {
+                    "@IsText": "True",
+                    "#text": "Ziegert, Tim"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Lower Sixth"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "L6-EMB"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "002205"
+                  },
+                  {
+                    "@IsText": "True",
+                    "#text": "Upper-Gonville Griffins"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

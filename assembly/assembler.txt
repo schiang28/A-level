@@ -1,0 +1,29 @@
+	LDR R0, n
+	LDR R1, c
+	MOV R2, #1
+
+loop:
+	AND R3, R0, R2
+	CMP R3, R2
+	BEQ even
+	LSL R4, R0, #1
+	ADD R4, R4, R0
+	ADD R4, R4, #1
+	MOV R0, R4
+
+compare:
+	ADD R1, R1, #1
+	CMP R0, R2
+	BNE loop
+
+end:
+	STR R1, c
+	STR R0, n
+     HALT
+
+even:
+	LSR R0, R0, #1
+	B compare
+
+n:	 53
+c:   0

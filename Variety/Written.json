@@ -1,0 +1,97 @@
+{
+  "Vici Black": {
+    "adno": "002227",
+    "tutor": "DJG",
+    "house": "Northwold Yales"
+  },
+  "Finbar Chambers": {
+    "adno": "004990",
+    "tutor": "EWD",
+    "house": "Langdale Lions"
+  },
+  "Sophie Chiang": {
+    "adno": "004991",
+    "tutor": "FKD",
+    "house": "Pendeen Dragons"
+  },
+  "Finlay Lumsden": {
+    "adno": "005519",
+    "tutor": "EMB",
+    "house": "Gonville Griffins"
+  },
+  "Yee Yee Ma": {
+    "adno": "006345",
+    "tutor": "DJG",
+    "house": "Langdale Lions"
+  },
+  "Mario Manini": {
+    "adno": "005018",
+    "tutor": "MJW",
+    "house": "Mecklenburgh Unicorns"
+  },
+  "William Smith": {
+    "adno": "002217",
+    "tutor": "MSE",
+    "house": "Langdale Lions"
+  },
+  "RuoyuFei Wang": {
+    "adno": "005538",
+    "tutor": "MSE",
+    "house": "Langdale Lions"
+  },
+  "Yechan Yun": {
+    "adno": "005677",
+    "tutor": "MSE",
+    "house": "Langdale Lions"
+  },
+  "Jem Bennett": {
+    "adno": "001537",
+    "tutor": "PXR",
+    "house": "Gonville Griffins"
+  },
+  "Hugh Benton": {
+    "adno": "002019",
+    "tutor": "RAM",
+    "house": "Northwold Yales"
+  },
+  "Daniel Chen": {
+    "adno": "005496",
+    "tutor": "EWD",
+    "house": "Langdale Lions"
+  },
+  "Robert Earle": {
+    "adno": "005500",
+    "tutor": "DVP",
+    "house": "Bateman Bulls"
+  },
+  "Zakk Lazar": {
+    "adno": "005516",
+    "tutor": "DVP",
+    "house": "Bateman Bulls"
+  },
+  "Elvira Munteanu": {
+    "adno": "006349",
+    "tutor": "MSE",
+    "house": "Langdale Lions"
+  },
+  "Sebastian Rouse": {
+    "adno": "001598",
+    "tutor": "CKB",
+    "house": "Mecklenburgh Unicorns"
+  },
+  "Ville Taipale": {
+    "adno": "006365",
+    "tutor": "SPB",
+    "house": "Pendeen Dragons"
+  },
+  "Rufus Williams": {
+    "adno": "004521",
+    "tutor": "EMB",
+    "house": "Gonville Griffins"
+  },
+  "Tim Ziegert": {
+    "adno": "002205",
+    "tutor": "EMB",
+    "house": "Gonville Griffins"
+  }
+}

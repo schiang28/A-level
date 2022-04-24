@@ -1,0 +1,3 @@
+robin, 3 
+hoopo, 2 
+woodpecker, 4 

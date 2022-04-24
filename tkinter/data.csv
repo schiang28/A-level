@@ -1,0 +1,14 @@
+start,The entrance to the cave is a sight to behold! You can't help but decide to enter it!,0,1,0,0
+1,A narrow passageway,start,3,0,0
+2,You slide in to a cave,0,0,0,3
+3,Fork in the road,1,0,2,4
+4,You fell down into a pit,0,5,3,7
+5,Dead end,4,0,0,0
+6,Damp room,0,2,0,11
+7,Huge cavern!,8,0,4,10
+8,You can go North or South!,4,7,0,0
+9,Dead end again - a tight spot!,0,10,0,0
+10,It feels hot in here!,9,11,7,0
+11,It feels roasting in here!,10,0,6,12
+12,You are melting!,0,exit,11,0
+exit,You made it to the light!!! Well done!,12,0,0,0
