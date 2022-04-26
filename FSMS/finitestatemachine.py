@@ -29,7 +29,6 @@ class FSM:
 
 with open("fsm.txt", "r") as f:
     rules = [i.split() for i in f.read().splitlines()]
-
 with open("inp.txt", "r") as f:
     inputs = f.read().splitlines()
 
