@@ -9,40 +9,32 @@ class State:
     def getNextState(self, match):
         return self._rules[match]
 
-    ...
-
 
 class FSM:
-    def __init__(self, transitionRules, inputTape):
-        self.transitionRules = transitionRules
-        self.inputTape = inputTape
+    def __init__(self, inputTape):
+        self.curr = states["S0"]
+        for i in inputTape:
+            self.doNextTransition(i)
 
-    def doNextTransition(self, p):
-        return State(self.getNextState(self.inputTape[p]))
+        if self.curr.name[0] == "A":
+            print("accepted")
+        else:
+            print("rejected")
 
-    currentState = State("S0")
-    # for i in self.inputTape:
+    def doNextTransition(self, i):
+        n = self.curr.getNextState(i)
+        print(self.curr.name + "->" + n.name, i)
+        self.curr = n
 
 
-# add states first
-# rules key = "a": State(a3)
+with open("fsm.txt", "r") as f:
+    rules = [i.split() for i in f.read().splitlines()]
 
-with open("fsm.txt") as f:
-    fsmDef = [i.split() for i in f.read().splitlines()]
+with open("inp.txt", "r") as f:
+    inputs = f.read().splitlines()
 
-with open("inp.txt") as f:
-    fsmInp = f.read().splitlines()
+states = {s: State(s) for s in set([i[0] for i in rules])}
+[states[r[0]].addRule(r[1], states[r[2]]) for r in rules]
 
-states = []
-for s in range(0, len(fsmDef), 2):
-    state = State(fsmDef[s][0])
-    states.append(state)
-
-for s in range(len(states)):
-    state.addRule(fsmDef[s * 2][1], State(fsmDef[s * 2][2]))
-    state.addRule(fsmDef[s * 2 + 1][1], State(fsmDef[s * 2 + 1][2]))
-
-print(states)
-
-for i in fsmInp:
-    machine = FSM(fsmDef, fsmInp)
+for i in inputs:
+    machine = FSM(i)
