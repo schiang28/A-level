@@ -644,7 +644,7 @@ def PlayGame(Player1, Player2, Grid):
                 + " state your three commands, pressing enter after each one."
             )
         for Count in range(1, 4):
-            Commands.append(input("Enter command: ").lower())
+            Commands.append(input("Enter command: ").lower().strip(" "))
         for C in Commands:
             Items = C.split(" ")
             ValidCommand = CheckCommandIsValid(Items)
