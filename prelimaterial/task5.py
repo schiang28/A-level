@@ -438,15 +438,15 @@ class HexGrid:
         GridLine, Index = self.__CreateEvenLineIndices(Index, True)
         GridString += GridLine
         self.__ListPositionOfTile += 1
-        GridAsString += self.__CreateOddLineIndices()
+        GridAsString += self.__CreateOddLineIndices(Index)
         for count in range(1, self._Size - 1, 2):
             self.__ListPositionOfTile += 1
-            GridAsString += self.__CreateEvenLine(False)
+            GridAsString += self.__CreateEvenLineIndices(Index, False)
             self.__ListPositionOfTile += 1
-            GridAsString += self.__CreateOddLine()
+            GridAsString += self.__CreateOddLineIndices(Index)
         return GridAsString + self.__CreateBottomLine()
 
-    def __CreateOddLineIndices(self):
+    def __CreateOddLineIndices(self, Index):
         Line = ""
         for count in range(1, self._Size // 2 + 1):
             if count > 1 and count < self._Size // 2:
@@ -469,7 +469,6 @@ class HexGrid:
         return Line
 
     def __CreateEvenLineIndices(self, FirstEvenLine):
-        Line = " /" + self._Tiles[self.__ListPositionOfTile].GetTerrain()
         for count in range(1, self._Size // 2):
             Line += self.GetPieceTypeInTile(self.__ListPositionOfTile)
             self.__ListPositionOfTile += 1
