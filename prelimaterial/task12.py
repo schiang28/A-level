@@ -100,6 +100,14 @@ class PBDSPiece(Piece):
             return 5
 
 
+class BombPiece(Piece):
+    def __init__(self, Player1):
+        super(BombPiece, self).__init__(Player1)
+        self.__PieceType = "S"
+        self.__FuelCostOfMove = 2
+        self.__VPValue = 5
+
+
 class Tile:
     def __init__(self, xcoord, ycoord, zcoord):
         self._x = xcoord
@@ -615,12 +623,21 @@ def CheckUpgradeCommandFormat(Items):
     return False
 
 
+def CheckSpawnCommandFormat(Items):
+    if len(Items) == 2:
+        return CheckStandardCommandFormat(Items)
+    else:
+        return False
+
+
 def CheckCommandIsValid(Items):
     if len(Items) > 0:
         if Items[0] == "move":
             return CheckMoveCommandFormat(Items)
-        elif Items[0] in ["dig", "saw", "spawn"]:
+        elif Items[0] in ["dig", "saw"]:
             return CheckStandardCommandFormat(Items)
+        elif Items[0] == "spawn":
+            return CheckSpawnCommandFormat(Items)
         elif Items[0] == "upgrade":
             return CheckUpgradeCommandFormat(Items)
     return False
