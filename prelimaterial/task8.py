@@ -196,7 +196,7 @@ class HexGrid:
                 return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
             LumberChange = -LumberCost
         elif Items[0] == "downgrade":
-            LumberCost = self.__ExecuteDowngradeCommand(Items, LumberAvailable)
+            LumberCost = self.__ExecuteDowngradeCommand(Items)
             if LumberCost < 0:
                 return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
             LumberChange -= LumberCost
@@ -306,16 +306,16 @@ class HexGrid:
     def __ExecuteDowngradeCommand(self, Items):
         TileToUse = int(Items[1])
         if not self.__CheckPieceAndTileAreValid(TileToUse):
-            return 0
+            return -1
         else:
             ThePiece = self._Tiles[TileToUse].GetPieceInTile()
             if ThePiece.GetPieceType().upper() not in ["P", "L"]:
-                return 0
+                return -1
             ThePiece.DestroyPiece()
             ThePiece = Piece(self.__Player1Turn)
             self._Pieces.append(ThePiece)
             self._Tiles[TileToUse].SetPiece(ThePiece)
-            return -1
+            return 1
 
     def __SetUpTiles(self):
         EvenStartY = 0
@@ -595,7 +595,7 @@ def SetUpDefaultGame():
     Player2 = Player("Player Two", 1, 10, 10, 5)
     Grid.SetUpGridTerrain(T)
     Grid.AddPiece(True, "Baron", 0)
-    Grid.AddPiece(True, "Serf", 8)
+    Grid.AddPiece(True, "Serf", 16)
     Grid.AddPiece(False, "Baron", 31)
     Grid.AddPiece(False, "Serf", 23)
     return Player1, Player2, Grid
@@ -637,7 +637,7 @@ def CheckUpgradeCommandFormat(Items):
 def CheckDowngradeCommandFormat(Items):
     if len(Items) == 2:
         try:
-            Result = int(Items[2])
+            Result = int(Items[1])
         except:
             return False
         return True
