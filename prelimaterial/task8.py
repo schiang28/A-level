@@ -195,6 +195,11 @@ class HexGrid:
             if LumberCost < 0:
                 return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
             LumberChange = -LumberCost
+        elif Items[0] == "downgrade":
+            LumberCost = self.__ExecuteDowngradeCommand(Items, LumberAvailable)
+            if LumberCost < 0:
+                return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
+            LumberChange -= LumberCost
         return "Command executed", FuelChange, LumberChange, SupplyChange
 
     def __CheckTileIndexIsValid(self, TileToCheck):
@@ -297,6 +302,20 @@ class HexGrid:
             self._Pieces.append(ThePiece)
             self._Tiles[TileToUse].SetPiece(ThePiece)
             return 5
+
+    def __ExecuteDowngradeCommand(self, Items):
+        TileToUse = int(Items[1])
+        if not self.__CheckPieceAndTileAreValid(TileToUse):
+            return 0
+        else:
+            ThePiece = self._Tiles[TileToUse].GetPieceInTile()
+            if ThePiece.GetPieceType().upper() not in ["P", "L"]:
+                return 0
+            ThePiece.DestroyPiece()
+            ThePiece = Piece(self.__Player1Turn)
+            self._Pieces.append(ThePiece)
+            self._Tiles[TileToUse].SetPiece(ThePiece)
+            return -1
 
     def __SetUpTiles(self):
         EvenStartY = 0
