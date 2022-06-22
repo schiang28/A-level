@@ -94,10 +94,7 @@ class PBDSPiece(Piece):
     def Dig(self, Terrain):
         if Terrain != "~":
             return 0
-        if random.random() < 0.9:
-            return 1
-        else:
-            return 5
+        return 1
 
 
 class Tile:
@@ -428,6 +425,9 @@ class HexGrid:
                 + os.linesep
             )
         return Line
+
+    def MakeField(self, index):
+        pass
 
 
 class Player:
