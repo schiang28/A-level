@@ -427,7 +427,7 @@ class HexGrid:
         return Line
 
     def MakeField(self, index):
-        pass
+        self._Tiles[index].SetTerrain(" ")
 
 
 class Player:
@@ -644,12 +644,22 @@ def PlayGame(Player1, Player2, Grid):
             )
         for Count in range(1, 4):
             Commands.append(input("Enter command: ").lower())
+
+        sawno = 0
+        digno = 0
+        location = ""
         for C in Commands:
             Items = C.split(" ")
             ValidCommand = CheckCommandIsValid(Items)
             if not ValidCommand:
                 print("Invalid command")
             else:
+                if location == "":
+                    location = Items[1]
+                if Items[0] == "dig" and Items[1] == location:
+                    digno += 1
+                if Items[0] == "saw" and Items[1] == location:
+                    sawno += 1
                 FuelChange = 0
                 LumberChange = 0
                 SupplyChange = 0
@@ -685,6 +695,18 @@ def PlayGame(Player1, Player2, Grid):
                     Player2.UpdateFuel(FuelChange)
                     if SupplyChange == 1:
                         Player2.RemoveTileFromSupply()
+                if digno == 3:
+                    if Player1Turn:
+                        Player1.UpdateFuel(2)
+                    else:
+                        Player2.UpdateFuel(2)
+                    Grid.MakeField(int(location))
+                if sawno == 3:
+                    if Player1Turn:
+                        Player1.UpdateLumber(2)
+                    else:
+                        Player2.UpdateLumber(2)
+                    Grid.MakeField(int(location))
                 print(SummaryOfResult)
         Commands.clear()
         Player1Turn = not Player1Turn
