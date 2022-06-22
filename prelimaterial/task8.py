@@ -312,7 +312,7 @@ class HexGrid:
             if ThePiece.GetPieceType().upper() not in ["P", "L"]:
                 return -1
             ThePiece.DestroyPiece()
-            ThePiece = Piece(self.__Player1Turn)
+            ThePiece = Piece(self._Player1Turn)
             self._Pieces.append(ThePiece)
             self._Tiles[TileToUse].SetPiece(ThePiece)
             return 1
