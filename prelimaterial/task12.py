@@ -255,10 +255,15 @@ class HexGrid:
         return FuelCost
 
     def __ExecuteSpawnCommand(self, Items, LumberAvailable, PiecesInSupply):
-        TileToUse = int(Items[1])
+        if len(Items) == 2:
+            TileToUse = int(Items[1])
+            Spawncost = 3
+        else:
+            TileToUse = int(Items[2])
+            Spawncost = 10
         if (
             PiecesInSupply < 1
-            or LumberAvailable < 3
+            or LumberAvailable < Spawncost
             or not self.__CheckTileIndexIsValid(TileToUse)
         ):
             return -1
@@ -280,10 +285,13 @@ class HexGrid:
                     break
         if not OwnBaronIsNeighbour:
             return -1
-        NewPiece = Piece(self._Player1Turn)
+        if len(Items) == 3:
+            NewPiece = BombPiece(self._Player1Turn)
+        else:
+            NewPiece = Piece(self._Player1Turn)
         self._Pieces.append(NewPiece)
         self._Tiles[TileToUse].SetPiece(NewPiece)
-        return 3
+        return Spawncost
 
     def __ExecuteUpgradeCommand(self, Items, LumberAvailable):
         TileToUse = int(Items[2])
@@ -627,7 +635,12 @@ def CheckSpawnCommandFormat(Items):
     if len(Items) == 2:
         return CheckStandardCommandFormat(Items)
     else:
-        return False
+        try:
+            assert Items[1] == "bomb"
+            Result = int(Items[2])
+        except:
+            return False
+        return True
 
 
 def CheckCommandIsValid(Items):
