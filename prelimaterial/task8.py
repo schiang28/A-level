@@ -196,9 +196,9 @@ class HexGrid:
                 return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
             LumberChange = -LumberCost
         elif Items[0] == "downgrade":
-            LumberCost = self.__ExecuteDowngradeCommand(Items)
+            LumberCost = self.__ExecuteDowngradeCommand(Items, LumberAvailable)
             if LumberCost < 0:
-                return "Upgrade not possible", FuelChange, LumberChange, SupplyChange
+                return "downgrade not possible", FuelChange, LumberChange, SupplyChange
             LumberChange -= LumberCost
         return "Command executed", FuelChange, LumberChange, SupplyChange
 
@@ -303,9 +303,9 @@ class HexGrid:
             self._Tiles[TileToUse].SetPiece(ThePiece)
             return 5
 
-    def __ExecuteDowngradeCommand(self, Items):
+    def __ExecuteDowngradeCommand(self, Items, LumberAvailable):
         TileToUse = int(Items[1])
-        if not self.__CheckPieceAndTileAreValid(TileToUse):
+        if not self.__CheckPieceAndTileAreValid(TileToUse) or LumberAvailable < 1:
             return -1
         else:
             ThePiece = self._Tiles[TileToUse].GetPieceInTile()
