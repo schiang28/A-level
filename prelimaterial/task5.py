@@ -431,36 +431,33 @@ class HexGrid:
         return Line
 
     def GetGridAsIndices(self, P1Turn):
-        Index = 0
         self.__ListPositionOfTile = 0
         self._Player1Turn = P1Turn
-        GridString = self.__CreateTopLine()
-        GridLine, Index = self.__CreateEvenLineIndices(Index, True)
-        GridString += GridLine
+        GridAsString = self.__CreateTopLine() + self.__CreateEvenLineIndices(True)
         self.__ListPositionOfTile += 1
-        GridAsString += self.__CreateOddLineIndices(Index)
+        GridAsString += self.__CreateOddLineIndices()
         for count in range(1, self._Size - 1, 2):
             self.__ListPositionOfTile += 1
-            GridAsString += self.__CreateEvenLineIndices(Index, False)
+            GridAsString += self.__CreateEvenLineIndices(False)
             self.__ListPositionOfTile += 1
-            GridAsString += self.__CreateOddLineIndices(Index)
+            GridAsString += self.__CreateOddLineIndices()
         return GridAsString + self.__CreateBottomLine()
 
-    def __CreateOddLineIndices(self, Index):
+    def __CreateOddLineIndices(self):
         Line = ""
         for count in range(1, self._Size // 2 + 1):
             if count > 1 and count < self._Size // 2:
-                Line += self.GetPieceTypeInTile(self.__ListPositionOfTile) + "\\__/"
+                Line += " " * abs(len(str(self.__ListPositionOfTile)) - 2) + "\\__/"
                 self.__ListPositionOfTile += 1
-                Line += self._Tiles[self.__ListPositionOfTile].GetTerrain()
+                Line += str(self.__ListPositionOfTile)
             elif count == 1:
-                Line += " \\__/" + self._Tiles[self.__ListPositionOfTile].GetTerrain()
-        Line += self.GetPieceTypeInTile(self.__ListPositionOfTile) + "\\__/"
+                Line += " \\__/" + str(self.__ListPositionOfTile)
+        Line += " " * abs(len(str(self.__ListPositionOfTile)) - 2) + "\\__/"
         self.__ListPositionOfTile += 1
         if self.__ListPositionOfTile < len(self._Tiles):
             Line += (
-                self._Tiles[self.__ListPositionOfTile].GetTerrain()
-                + self.GetPieceTypeInTile(self.__ListPositionOfTile)
+                " " * abs(len(str(self.__ListPositionOfTile)) - 2)
+                + str(self.__ListPositionOfTile)
                 + "\\"
                 + os.linesep
             )
@@ -469,17 +466,18 @@ class HexGrid:
         return Line
 
     def __CreateEvenLineIndices(self, FirstEvenLine):
+        Line = " /" + str(self.__ListPositionOfTile)
         for count in range(1, self._Size // 2):
-            Line += self.GetPieceTypeInTile(self.__ListPositionOfTile)
+            Line += " " * abs(len(str(self.__ListPositionOfTile)) - 2)
             self.__ListPositionOfTile += 1
-            Line += "\\__/" + self._Tiles[self.__ListPositionOfTile].GetTerrain()
+            Line += "\\__/" + str(self.__ListPositionOfTile)
         if FirstEvenLine:
             Line += (
-                self.GetPieceTypeInTile(self.__ListPositionOfTile) + "\\__" + os.linesep
+                " " * abs(len(str(self.__ListPositionOfTile)) - 2) + "\\__" + os.linesep
             )
         else:
             Line += (
-                self.GetPieceTypeInTile(self.__ListPositionOfTile)
+                " " * abs(len(str(self.__ListPositionOfTile)) - 2)
                 + "\\__/"
                 + os.linesep
             )
@@ -699,7 +697,11 @@ def PlayGame(Player1, Player2, Grid):
                 + " state your three commands, pressing enter after each one."
             )
         for Count in range(1, 4):
-            Commands.append(input("Enter command: ").lower())
+            Command = input("Enter command: ").lower()
+            while Command == "hexes":
+                print(Grid.GetGridAsIndices(Player1Turn))
+                Command = input("Enter command: ").lower()
+            Commands.append(Command)
         for C in Commands:
             Items = C.split(" ")
             ValidCommand = CheckCommandIsValid(Items)
