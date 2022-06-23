@@ -13,7 +13,7 @@ class Piece:
         self._BelongsToPlayer1 = Player1
         self._Destroyed = False
         self._PieceType = "S"
-        self._VPValue = 1
+        self._VPValue = 1  # victory point if destroyed
         self._ConnectionsToDestroy = 2
 
     def GetVPs(self):
@@ -86,6 +86,7 @@ class PBDSPiece(Piece):
         self._FuelCostOfMove = 2
 
     def CheckMoveIsValid(self, DistanceBetweenTiles, StartTerrain, EndTerrain):
+        # if pbds starts in peak bog it can't move
         if DistanceBetweenTiles != 1 or StartTerrain == "~":
             return -1
         return self._FuelCostOfMove
@@ -645,7 +646,7 @@ def PlayGame(Player1, Player2, Grid):
             )
         for Count in range(1, 4):
             Commands.append(input("Enter command: ").lower())
-        movescounter = 0
+        movecounter = 0
         for C in Commands:
             Items = C.split(" ")
             ValidCommand = CheckCommandIsValid(Items)
@@ -653,8 +654,9 @@ def PlayGame(Player1, Player2, Grid):
                 print("Invalid command")
             else:
                 if Items[0] == "move":
-                    movescounter += 1
-                if movescounter == 3:
+                    if CheckMoveCommandFormat(Items):
+                        movecounter += 1
+                if movecounter == 3:
                     if Player1Turn:
                         Player1.UpdateFuel(1)
                     else:
