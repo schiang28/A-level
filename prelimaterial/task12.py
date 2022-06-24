@@ -100,14 +100,6 @@ class PBDSPiece(Piece):
             return 5
 
 
-class BombPiece(Piece):
-    def __init__(self, Player1):
-        super(BombPiece, self).__init__(Player1)
-        self.__PieceType = "S"
-        self.__FuelCostOfMove = 2
-        self.__VPValue = 5
-
-
 class Tile:
     def __init__(self, xcoord, ycoord, zcoord):
         self._x = xcoord
@@ -255,15 +247,10 @@ class HexGrid:
         return FuelCost
 
     def __ExecuteSpawnCommand(self, Items, LumberAvailable, PiecesInSupply):
-        if len(Items) == 2:
-            TileToUse = int(Items[1])
-            Spawncost = 3
-        else:
-            TileToUse = int(Items[2])
-            Spawncost = 10
+        TileToUse = int(Items[1])
         if (
             PiecesInSupply < 1
-            or LumberAvailable < Spawncost
+            or LumberAvailable < 3
             or not self.__CheckTileIndexIsValid(TileToUse)
         ):
             return -1
@@ -285,13 +272,10 @@ class HexGrid:
                     break
         if not OwnBaronIsNeighbour:
             return -1
-        if len(Items) == 3:
-            NewPiece = BombPiece(self._Player1Turn)
-        else:
-            NewPiece = Piece(self._Player1Turn)
+        NewPiece = Piece(self._Player1Turn)
         self._Pieces.append(NewPiece)
         self._Tiles[TileToUse].SetPiece(NewPiece)
-        return Spawncost
+        return 3
 
     def __ExecuteUpgradeCommand(self, Items, LumberAvailable):
         TileToUse = int(Items[2])
@@ -633,14 +617,20 @@ def CheckUpgradeCommandFormat(Items):
 
 def CheckSpawnCommandFormat(Items):
     if len(Items) == 2:
-        return CheckStandardCommandFormat(Items)
-    else:
+        try:
+            Result = int(Items[1])
+        except:
+            return False
+        return True
+    elif len(Items) == 3:
         try:
             assert Items[1] == "bomb"
             Result = int(Items[2])
         except:
             return False
         return True
+    else:
+        return False
 
 
 def CheckCommandIsValid(Items):
